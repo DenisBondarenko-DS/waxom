@@ -1,0 +1,130 @@
+// USER VARIABLES SECTION
+
+$montserrat: 'Montserrat', sans-serif;
+$raleway: 'Raleway', sans-serif;
+
+$accent-color: #c7b299;
+$text-color-main: #555555;
+$text-color-secondary: #8c8c8c;
+$secondary-color: #998675;
+
+// MIXINS
+
+@mixin transition {
+    transition: all 0.2s ease-in;
+}
+
+// GENERAL DOCUMENT STYLES
+
+* {
+	box-sizing: border-box;
+
+	&:before,
+	&:after {
+		box-sizing: border-box;
+	}
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+	font-family: $montserrat;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	opacity: 1;
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	max-width: 1230px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.title {
+	font-family: $raleway;
+	font-size: 30px;
+	color: $text-color-main;
+	font-weight: 600;
+	text-align: center;
+}
+
+.text {
+	font-family: $montserrat;
+	color: $text-color-secondary;
+	font-size: 16px;
+	line-height: 1.75;
+	text-align: center;
+	font-weight: 300;
+}
+
+.section-head__title {
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+
+.section-head__text {
+	max-width: 770px;
+	margin: 0 auto 35px;
+}
+
+.link {
+    font-family: $montserrat;
+    font-size: 14px;
+    color: $accent-color;
+
+    &:hover {
+        &::after {
+            margin-left: 20px;
+        }
+    }
+
+    &::after {
+        content: url("../img/arrow.svg");
+        vertical-align: center;
+        margin-left: 9px;
+        @include transition;
+    }
+}
+
+.fixed {
+	position: fixed;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	-webkit-overflow-scrolling: touch;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
